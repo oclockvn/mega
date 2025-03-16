@@ -24,9 +24,11 @@ public class Program
             app.MapOpenApi();
         }
 
+        // map global exception handler in the first place of the pipeline
+        app.UseGlobalExceptionHandler();
+
         app.UseHttpsRedirection();
         app.UseAuthorization();
-        app.UseGlobalExceptionHandler();
 
         app.MapControllers();
 
