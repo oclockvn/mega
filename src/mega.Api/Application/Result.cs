@@ -2,7 +2,7 @@
 
 namespace mega.Api.Application;
 
-public record struct Result<T>
+public record Result<T>
 {
     public T? Data { get; set; }
     public ResultCode Code { get; set; } = ResultCode.Success;
@@ -20,8 +20,22 @@ public record struct Result<T>
     }
 }
 
+public record ResultContext<T> : Result<T>
+{
+    public ResultContext(string message, string correlationId, ResultCode code) : base(code)
+    {
+        Message = message;
+        CorrelationId = correlationId;
+    }
+
+    public string Message { get; set; }
+    public string CorrelationId { get; set; }
+}
+
 public enum ResultCode
 {
     Success = 0,
     EntityNotFound,
+    InternalServerError,
+    BusinessRuleViolation,
 }
