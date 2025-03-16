@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace mega.Api.Db;
 
-public class AppDbContext(DbContextOptions<AppDbContext> dbContextOptions) : DbContext(dbContextOptions)
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> dbContextOptions) : DbContext(dbContextOptions)
 {
     public DbSet<User> Users { get; set; }
     public DbSet<Account> Accounts { get; set; }
@@ -16,6 +16,6 @@ public class AppDbContext(DbContextOptions<AppDbContext> dbContextOptions) : DbC
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
     }
 }
