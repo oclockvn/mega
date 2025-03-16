@@ -11,6 +11,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        builder.Services.AddMegaApi();
         builder.Services.AddMegaInfrastructure(builder.Configuration, builder.Environment.IsDevelopment());
 
         builder.Services.AddControllers();
