@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace mega.Api;
+namespace mega.Api.Application;
 
 public record struct Result<T>
 {

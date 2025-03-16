@@ -1,6 +1,6 @@
-﻿using mega.Api.Db.Entities;
+﻿using mega.Api.Infrastructure.Db.Entities;
 
-namespace mega.Api.Db;
+namespace mega.Api.Infrastructure.Db;
 
 public interface IEntity<TKey>
 {

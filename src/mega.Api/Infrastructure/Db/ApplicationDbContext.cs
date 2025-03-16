@@ -1,7 +1,7 @@
-﻿using mega.Api.Db.Entities;
+﻿using mega.Api.Infrastructure.Db.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace mega.Api.Db;
+namespace mega.Api.Infrastructure.Db;
 
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> dbContextOptions) : DbContext(dbContextOptions)
 {

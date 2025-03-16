@@ -1,7 +1,8 @@
-﻿using mega.Api.Domains.Enums;
+﻿using mega.Api.Application.Enums;
+using mega.Api.Infrastructure.Db;
 using System.ComponentModel.DataAnnotations;
 
-namespace mega.Api.Db.Entities;
+namespace mega.Api.Infrastructure.Db.Entities;
 
 public class User : IEntity
 {
