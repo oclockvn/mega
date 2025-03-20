@@ -34,8 +34,8 @@ function Invoke-EfCommand {
 
     # common options
     $efOptions = @(
-        "-s", ".\sensor\sensor.csproj",
-        "-p", ".\sensor\sensor.csproj",
+        "-s", ".\src\mega.Api\mega.Api.csproj",
+        "-p", ".\src\mega.Api\mega.Api.csproj",
         "--context", "ApplicationDbContext"
     )
 
