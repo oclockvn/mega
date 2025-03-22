@@ -8,6 +8,7 @@ public static class ServiceCollectionExtension
     public static IServiceCollection AddMegaApi(this IServiceCollection services)
     {
         return services
+            .AddHttpContextAccessor()
             .AddScoped<ICorrelationIdResolver, HttpContextCorrelationIdResolver>()
             ;
     }

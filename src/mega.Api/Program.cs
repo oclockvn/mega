@@ -4,7 +4,7 @@ using mega.Api.Middleware;
 
 namespace mega.Api;
 
-public class Program
+public static class Program
 {
     public static async Task Main(string[] args)
     {
@@ -19,6 +19,9 @@ public class Program
 
         var app = builder.Build();
 
+        app.UseDefaultFiles();
+        app.MapStaticAssets();
+
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
@@ -32,6 +35,8 @@ public class Program
         app.UseAuthorization();
 
         app.MapControllers();
+
+        app.MapFallbackToFile("/index.html");
 
         await app.RunAsync();
     }
