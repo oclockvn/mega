@@ -1,0 +1,72 @@
+# Ignore build and output directories
+bin/
+obj/
+out/
+artifacts/
+
+# Ignore package manager directories
+packages/
+node_modules/
+.vscode/
+.idea/
+
+# Ignore user-specific and editor settings
+*.user
+*.suo
+*.vsp
+*.vspx
+*.vsmdi
+*.pdb
+*.cache
+*.ncb
+*.opendb
+*.bak
+*.log
+*.ldb
+
+# Ignore project-specific files
+*.csproj.user
+*.csproj.DotSettings
+*.vbproj.user
+*.sln.DotSettings
+project.lock.json
+project.assets.json
+appsettings.*.json
+
+# Ignore compiled and temporary files
+*.dll
+*.exe
+*.jar
+*.log
+*.cache
+*.tmp
+*.swp
+
+# Ignore Test results
+TestResults/
+*.TestResults/
+
+# Ignore Entity Framework Migrations history
+Migrations/
+
+# Ignore secrets and credentials
+secrets.json
+.env
+.env.*
+
+# Ignore Rider & ReSharper files
+*.DotSettings.user
+*.resharper
+_ReSharper*/
+
+.bin/
+.build/
+.cache/
+.config/
+.coverage/
+.docs/
+.templates/
+.vs/
+output/
+TestReport/
+TestResults/
