@@ -4,9 +4,7 @@ VisualStudioVersion = 17.13.35731.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mega.Api", "mega.Api\mega.Api.csproj", "{8A8EDAB6-9C78-48D3-9D0A-518456817509}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "megaui.client", "MegaUI\megaui.client\megaui.client.esproj", "{25A80B07-3181-CD6A-F643-025ECAA3E441}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaUI.Server", "MegaUI\MegaUI.Server\MegaUI.Server.csproj", "{EED2E8BD-2FF3-4D4D-A5A9-FF18697819FE}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "mega.UI", "mega.UI\mega.UI.esproj", "{071DBDE5-0FFC-E76D-079C-2E74F1A17787}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,16 +16,12 @@ Global
 		{8A8EDAB6-9C78-48D3-9D0A-518456817509}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A8EDAB6-9C78-48D3-9D0A-518456817509}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A8EDAB6-9C78-48D3-9D0A-518456817509}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25A80B07-3181-CD6A-F643-025ECAA3E441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25A80B07-3181-CD6A-F643-025ECAA3E441}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25A80B07-3181-CD6A-F643-025ECAA3E441}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{25A80B07-3181-CD6A-F643-025ECAA3E441}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25A80B07-3181-CD6A-F643-025ECAA3E441}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25A80B07-3181-CD6A-F643-025ECAA3E441}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{EED2E8BD-2FF3-4D4D-A5A9-FF18697819FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EED2E8BD-2FF3-4D4D-A5A9-FF18697819FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EED2E8BD-2FF3-4D4D-A5A9-FF18697819FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EED2E8BD-2FF3-4D4D-A5A9-FF18697819FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{071DBDE5-0FFC-E76D-079C-2E74F1A17787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{071DBDE5-0FFC-E76D-079C-2E74F1A17787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{071DBDE5-0FFC-E76D-079C-2E74F1A17787}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{071DBDE5-0FFC-E76D-079C-2E74F1A17787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{071DBDE5-0FFC-E76D-079C-2E74F1A17787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{071DBDE5-0FFC-E76D-079C-2E74F1A17787}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="mega.Api/mega.Api.csproj" />
+  <Project Path="mega.UI/mega.UI.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
