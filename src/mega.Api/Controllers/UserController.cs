@@ -6,91 +6,112 @@ namespace mega.Api.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
+static string json = """
+[{"username":"ikohrsen0","name":"Ivy Kohrsen","email":"ikohrsen0@wunderground.com","phone_number":"938-217-5065","status":"Suspended","role":"Superadmin"},
+{"username":"mtrusdale1","name":"Martica Trusdale","email":"mtrusdale1@ucsd.edu","phone_number":"487-962-4732","status":"Suspended","role":"Admin"},
+{"username":"vbode2","name":"Virgilio Bode","email":"vbode2@thetimes.co.uk","phone_number":"886-318-0168","status":"Active","role":"Cashier"},
+{"username":"npicknett3","name":"Nina Picknett","email":"npicknett3@cloudflare.com","phone_number":"136-350-7873","status":"Active","role":"Superadmin"},
+{"username":"spedican4","name":"Susie Pedican","email":"spedican4@vistaprint.com","phone_number":"554-387-4705","status":"Active","role":"Cashier"},
+{"username":"epollington5","name":"Ediva Pollington","email":"epollington5@tiny.cc","phone_number":"718-631-5515","status":"Active","role":"Superadmin"},
+{"username":"hcarnie6","name":"Horatio Carnie","email":"hcarnie6@ebay.com","phone_number":"749-218-3803","status":"Suspended","role":"Admin"},
+{"username":"etohill7","name":"Ellerey Tohill","email":"etohill7@bloglines.com","phone_number":"834-518-3035","status":"Active","role":"Admin"},
+{"username":"mmatveyev8","name":"Mack Matveyev","email":"mmatveyev8@vimeo.com","phone_number":"829-784-0328","status":"Suspended","role":"Cashier"},
+{"username":"mkinrade9","name":"Marchelle Kinrade","email":"mkinrade9@nifty.com","phone_number":"190-845-5198","status":"Suspended","role":"Cashier"},
+{"username":"jcausbya","name":"Juana Causby","email":"jcausbya@princeton.edu","phone_number":"460-732-6700","status":"Suspended","role":"Cashier"},
+{"username":"acoxb","name":"Alexine Cox","email":"acoxb@yahoo.co.jp","phone_number":"633-852-5847","status":"Inactive","role":"Cashier"},
+{"username":"zsandlec","name":"Zach Sandle","email":"zsandlec@ihg.com","phone_number":"561-387-6098","status":"Suspended","role":"Admin"},
+{"username":"eilyinykhd","name":"Eadith Ilyinykh","email":"eilyinykhd@ucoz.com","phone_number":"211-382-3585","status":"Suspended","role":"Superadmin"},
+{"username":"gpeinkee","name":"Georgia Peinke","email":"gpeinkee@meetup.com","phone_number":"618-305-1459","status":"Inactive","role":"Cashier"},
+{"username":"svsanellif","name":"Stanfield Vsanelli","email":"svsanellif@unicef.org","phone_number":"248-159-0210","status":"Inactive","role":"Cashier"},
+{"username":"skropachg","name":"Sascha Kropach","email":"skropachg@naver.com","phone_number":"666-802-0976","status":"Active","role":"Superadmin"},
+{"username":"anugenth","name":"Angelita Nugent","email":"anugenth@fotki.com","phone_number":"570-690-7928","status":"Inactive","role":"Superadmin"},
+{"username":"lvani","name":"Lisbeth Van Leijs","email":"lvani@shareasale.com","phone_number":"911-657-4861","status":"Active","role":"Superadmin"},
+{"username":"jvaninij","name":"Jennifer Vanini","email":"jvaninij@deviantart.com","phone_number":"451-382-3503","status":"Active","role":"Cashier"},
+{"username":"mkupiszk","name":"Megen Kupisz","email":"mkupiszk@scientificamerican.com","phone_number":"672-480-2149","status":"Inactive","role":"Cashier"},
+{"username":"jmallockl","name":"Jacob Mallock","email":"jmallockl@google.it","phone_number":"770-810-4595","status":"Inactive","role":"Superadmin"},
+{"username":"bmicahm","name":"Belva Micah","email":"bmicahm@qq.com","phone_number":"109-455-5861","status":"Inactive","role":"Admin"},
+{"username":"rstoacleyn","name":"Rutherford Stoacley","email":"rstoacleyn@mlb.com","phone_number":"590-453-0675","status":"Suspended","role":"Cashier"},
+{"username":"fmulliso","name":"Franklin Mullis","email":"fmulliso@fda.gov","phone_number":"373-476-4822","status":"Active","role":"Admin"},
+{"username":"djoinerp","name":"Derwin Joiner","email":"djoinerp@ucsd.edu","phone_number":"643-710-6331","status":"Suspended","role":"Superadmin"},
+{"username":"tcomiskeyq","name":"Tawnya Comiskey","email":"tcomiskeyq@lycos.com","phone_number":"432-920-2844","status":"Active","role":"Admin"},
+{"username":"evaggr","name":"Ethelyn Vagg","email":"evaggr@youku.com","phone_number":"629-149-9534","status":"Active","role":"Admin"},
+{"username":"ssimpkinss","name":"Sander Simpkins","email":"ssimpkinss@auda.org.au","phone_number":"221-628-2221","status":"Inactive","role":"Cashier"},
+{"username":"timost","name":"Tawsha Imos","email":"timost@ycombinator.com","phone_number":"875-867-1467","status":"Inactive","role":"Cashier"},
+{"username":"egaitu","name":"Earl Gait","email":"egaitu@taobao.com","phone_number":"878-722-1557","status":"Inactive","role":"Admin"},
+{"username":"carnoultv","name":"Cassie Arnoult","email":"carnoultv@amazon.co.uk","phone_number":"767-839-9476","status":"Inactive","role":"Admin"},
+{"username":"iproudw","name":"Isiahi Proud","email":"iproudw@ning.com","phone_number":"282-263-8431","status":"Active","role":"Cashier"},
+{"username":"lprykex","name":"Lutero Pryke","email":"lprykex@latimes.com","phone_number":"978-705-2839","status":"Inactive","role":"Cashier"},
+{"username":"tplaunchy","name":"Trefor Plaunch","email":"tplaunchy@harvard.edu","phone_number":"798-957-0150","status":"Suspended","role":"Admin"},
+{"username":"bfurleyz","name":"Brigitta Furley","email":"bfurleyz@jimdo.com","phone_number":"654-742-1078","status":"Suspended","role":"Superadmin"},
+{"username":"stern10","name":"Sigismundo Tern","email":"stern10@surveymonkey.com","phone_number":"825-817-1276","status":"Suspended","role":"Superadmin"},
+{"username":"deyree11","name":"Dillon Eyree","email":"deyree11@ucoz.ru","phone_number":"891-548-3195","status":"Inactive","role":"Superadmin"},
+{"username":"gsweeting12","name":"Gage Sweeting","email":"gsweeting12@japanpost.jp","phone_number":"806-242-4742","status":"Active","role":"Superadmin"},
+{"username":"dthornley13","name":"Deni Thornley","email":"dthornley13@cbc.ca","phone_number":"819-555-3682","status":"Suspended","role":"Cashier"},
+{"username":"gaggiss14","name":"Gillan Aggiss","email":"gaggiss14@ca.gov","phone_number":"305-780-7997","status":"Active","role":"Cashier"},
+{"username":"llightowlers15","name":"Lawton Lightowlers","email":"llightowlers15@seattletimes.com","phone_number":"472-383-2617","status":"Active","role":"Admin"},
+{"username":"denga16","name":"Daffy Enga","email":"denga16@qq.com","phone_number":"787-400-8660","status":"Active","role":"Cashier"},
+{"username":"wsimmonett17","name":"Worthy Simmonett","email":"wsimmonett17@elegantthemes.com","phone_number":"941-550-1510","status":"Suspended","role":"Cashier"},
+{"username":"lbaggiani18","name":"Lena Baggiani","email":"lbaggiani18@istockphoto.com","phone_number":"619-163-8500","status":"Inactive","role":"Superadmin"},
+{"username":"tsawfoot19","name":"Trace Sawfoot","email":"tsawfoot19@utexas.edu","phone_number":"318-969-1905","status":"Active","role":"Superadmin"},
+{"username":"fjacques1a","name":"Fianna Jacques","email":"fjacques1a@networksolutions.com","phone_number":"201-277-5900","status":"Active","role":"Superadmin"},
+{"username":"jalexsandrovich1b","name":"Jenny Alexsandrovich","email":"jalexsandrovich1b@rediff.com","phone_number":"464-230-3638","status":"Suspended","role":"Cashier"},
+{"username":"sorman1c","name":"Schuyler Orman","email":"sorman1c@omniture.com","phone_number":"298-454-2740","status":"Active","role":"Admin"},
+{"username":"ralyukin1d","name":"Roderigo Alyukin","email":"ralyukin1d@globo.com","phone_number":"408-463-9263","status":"Inactive","role":"Superadmin"},
+{"username":"fbartell1e","name":"Fianna Bartell","email":"fbartell1e@unesco.org","phone_number":"751-352-4755","status":"Suspended","role":"Admin"},
+{"username":"gfendley1f","name":"Gillan Fendley","email":"gfendley1f@google.pl","phone_number":"896-437-0050","status":"Active","role":"Cashier"},
+{"username":"snewgrosh1g","name":"Scottie Newgrosh","email":"snewgrosh1g@printfriendly.com","phone_number":"444-818-1513","status":"Inactive","role":"Superadmin"},
+{"username":"craden1h","name":"Connor Raden","email":"craden1h@slideshare.net","phone_number":"407-733-5765","status":"Active","role":"Admin"},
+{"username":"fgreswell1i","name":"Fergus Greswell","email":"fgreswell1i@usgs.gov","phone_number":"747-122-9588","status":"Suspended","role":"Admin"},
+{"username":"awick1j","name":"Angelo Wick","email":"awick1j@linkedin.com","phone_number":"811-494-8015","status":"Suspended","role":"Superadmin"},
+{"username":"wjudkin1k","name":"Wandis Judkin","email":"wjudkin1k@instagram.com","phone_number":"640-291-3781","status":"Suspended","role":"Cashier"},
+{"username":"psmithson1l","name":"Phillida Smithson","email":"psmithson1l@theguardian.com","phone_number":"657-351-7771","status":"Inactive","role":"Cashier"},
+{"username":"rkewley1m","name":"Rosalyn Kewley","email":"rkewley1m@deliciousdays.com","phone_number":"340-148-1932","status":"Suspended","role":"Superadmin"},
+{"username":"cmapes1n","name":"Calypso Mapes","email":"cmapes1n@goodreads.com","phone_number":"182-729-9691","status":"Inactive","role":"Superadmin"},
+{"username":"tpople1o","name":"Tracie Pople","email":"tpople1o@washingtonpost.com","phone_number":"480-428-1877","status":"Inactive","role":"Cashier"},
+{"username":"vshailer1p","name":"Vito Shailer","email":"vshailer1p@feedburner.com","phone_number":"441-450-3274","status":"Inactive","role":"Admin"},
+{"username":"ckeenlayside1q","name":"Courtnay Keenlayside","email":"ckeenlayside1q@virginia.edu","phone_number":"535-875-1244","status":"Suspended","role":"Superadmin"},
+{"username":"cgoodlett1r","name":"Candida Goodlett","email":"cgoodlett1r@google.it","phone_number":"163-267-6780","status":"Suspended","role":"Cashier"},
+{"username":"nlloydwilliams1s","name":"Nesta Lloyd-Williams","email":"nlloydwilliams1s@friendfeed.com","phone_number":"838-885-2724","status":"Inactive","role":"Superadmin"},
+{"username":"fpaffett1t","name":"Florence Paffett","email":"fpaffett1t@1688.com","phone_number":"834-892-5416","status":"Suspended","role":"Superadmin"},
+{"username":"ozarb1u","name":"Osmond Zarb","email":"ozarb1u@fastcompany.com","phone_number":"945-757-4736","status":"Inactive","role":"Admin"},
+{"username":"nclaughton1v","name":"Nance Claughton","email":"nclaughton1v@devhub.com","phone_number":"150-446-6851","status":"Suspended","role":"Superadmin"},
+{"username":"bsummers1w","name":"Betteann Summers","email":"bsummers1w@sakura.ne.jp","phone_number":"254-725-2897","status":"Inactive","role":"Superadmin"},
+{"username":"imcgarry1x","name":"Ingrim McGarry","email":"imcgarry1x@simplemachines.org","phone_number":"445-201-3138","status":"Active","role":"Superadmin"},
+{"username":"dwebling1y","name":"Darleen Webling","email":"dwebling1y@utexas.edu","phone_number":"379-497-6732","status":"Suspended","role":"Cashier"},
+{"username":"ddelamaine1z","name":"Dasi Delamaine","email":"ddelamaine1z@marriott.com","phone_number":"723-478-2987","status":"Inactive","role":"Admin"},
+{"username":"mcaisley20","name":"Marius Caisley","email":"mcaisley20@dedecms.com","phone_number":"916-225-6132","status":"Inactive","role":"Cashier"},
+{"username":"ptointon21","name":"Pauletta Tointon","email":"ptointon21@zdnet.com","phone_number":"280-888-3322","status":"Suspended","role":"Superadmin"},
+{"username":"dcroxall22","name":"Dulcie Croxall","email":"dcroxall22@artisteer.com","phone_number":"101-213-9804","status":"Suspended","role":"Cashier"},
+{"username":"afernehough23","name":"Astrix Fernehough","email":"afernehough23@1und1.de","phone_number":"411-329-4469","status":"Suspended","role":"Admin"},
+{"username":"jadamiak24","name":"Jo Adamiak","email":"jadamiak24@ca.gov","phone_number":"972-534-2610","status":"Inactive","role":"Cashier"},
+{"username":"hpuckinghorne25","name":"Hill Puckinghorne","email":"hpuckinghorne25@is.gd","phone_number":"302-702-1513","status":"Active","role":"Cashier"},
+{"username":"hadamovsky26","name":"Holly Adamovsky","email":"hadamovsky26@mysql.com","phone_number":"438-661-1516","status":"Suspended","role":"Admin"},
+{"username":"bde27","name":"Bourke De Michele","email":"bde27@auda.org.au","phone_number":"957-858-1326","status":"Suspended","role":"Admin"},
+{"username":"tkeating28","name":"Tucker Keating","email":"tkeating28@vistaprint.com","phone_number":"339-851-4034","status":"Active","role":"Superadmin"},
+{"username":"gbeavan29","name":"Geoffrey Beavan","email":"gbeavan29@pen.io","phone_number":"113-293-9863","status":"Active","role":"Admin"},
+{"username":"sstrathman2a","name":"Shem Strathman","email":"sstrathman2a@howstuffworks.com","phone_number":"888-958-3987","status":"Inactive","role":"Superadmin"},
+{"username":"cnijssen2b","name":"Camala Nijssen","email":"cnijssen2b@auda.org.au","phone_number":"115-471-4208","status":"Suspended","role":"Admin"},
+{"username":"tszwandt2c","name":"Tammara Szwandt","email":"tszwandt2c@newsvine.com","phone_number":"221-428-9564","status":"Inactive","role":"Admin"},
+{"username":"hsmitheram2d","name":"Hartwell Smitheram","email":"hsmitheram2d@npr.org","phone_number":"371-682-1162","status":"Active","role":"Superadmin"},
+{"username":"asyred2e","name":"Ayn Syred","email":"asyred2e@nps.gov","phone_number":"179-140-5671","status":"Inactive","role":"Superadmin"},
+{"username":"twilber2f","name":"Tessie Wilber","email":"twilber2f@gravatar.com","phone_number":"578-649-5442","status":"Active","role":"Cashier"},
+{"username":"sganforth2g","name":"Silvia Ganforth","email":"sganforth2g@soundcloud.com","phone_number":"900-302-8062","status":"Inactive","role":"Cashier"},
+{"username":"slanda2h","name":"Shell Landa","email":"slanda2h@nbcnews.com","phone_number":"351-469-2113","status":"Active","role":"Admin"},
+{"username":"kburnyate2i","name":"Kaitlin Burnyate","email":"kburnyate2i@google.co.uk","phone_number":"904-183-9977","status":"Active","role":"Cashier"},
+{"username":"bcoffey2j","name":"Benedikta Coffey","email":"bcoffey2j@webs.com","phone_number":"650-416-8846","status":"Inactive","role":"Admin"},
+{"username":"pelcum2k","name":"Pavlov Elcum","email":"pelcum2k@wunderground.com","phone_number":"627-205-4040","status":"Inactive","role":"Superadmin"},
+{"username":"hsharper2l","name":"Hadlee Sharper","email":"hsharper2l@buzzfeed.com","phone_number":"142-512-4515","status":"Suspended","role":"Cashier"},
+{"username":"dmidson2m","name":"Dill Midson","email":"dmidson2m@geocities.com","phone_number":"732-386-8592","status":"Suspended","role":"Cashier"},
+{"username":"ngiacomozzo2n","name":"Nananne Giacomozzo","email":"ngiacomozzo2n@omniture.com","phone_number":"632-828-0068","status":"Inactive","role":"Superadmin"},
+{"username":"fdaniello2o","name":"Farly Daniello","email":"fdaniello2o@gizmodo.com","phone_number":"768-765-6147","status":"Active","role":"Superadmin"},
+{"username":"lmaso2p","name":"Larry Maso","email":"lmaso2p@mediafire.com","phone_number":"634-539-7011","status":"Inactive","role":"Cashier"},
+{"username":"ncastello2q","name":"Nehemiah Castello","email":"ncastello2q@storify.com","phone_number":"694-737-9803","status":"Suspended","role":"Cashier"},
+{"username":"lglencrosche2r","name":"Leonhard Glencrosche","email":"lglencrosche2r@reuters.com","phone_number":"853-252-3790","status":"Suspended","role":"Cashier"}]
+""";
+
         public async Task<IActionResult> Get()
         {
-            var json = """
-                                [{
-                  "Id": "1",
-                  "Name": "Carlene",
-                  "Role": "Mr",
-                  "Status": "Active",
-                  "Company": "Dabtype",
-                  "AvatarUrl": "https://tinyurl.com/maecenas/tincidunt/lacus/at/velit/vivamus/vel.js?pellentesque=sit&eget=amet&nunc=consectetuer&donec=adipiscing&quis=elit&orci=proin&eget=interdum&orci=mauris&vehicula=non&condimentum=ligula&curabitur=pellentesque&in=ultrices&libero=phasellus&ut=id",
-                  "IsVerified": true
-                }, {
-                  "Id": "2",
-                  "Name": "Rab",
-                  "Role": "Ms",
-                  "Status": "Inactive",
-                  "Company": "Linkbuzz",
-                  "AvatarUrl": "http://tuttocitta.it/vestibulum/velit/id/pretium/iaculis/diam/erat.xml?accumsan=ut&felis=odio&ut=cras&at=mi&dolor=pede&quis=malesuada&odio=in&consequat=imperdiet&varius=et&integer=commodo&ac=vulputate&leo=justo&pellentesque=in",
-                  "IsVerified": true
-                }, {
-                  "Id": "3",
-                  "Name": "Hilliary",
-                  "Role": "Mrs",
-                  "Status": "Active",
-                  "Company": "Edgeify",
-                  "AvatarUrl": "https://slashdot.org/ac/neque/duis/bibendum/morbi/non/quam.html?aliquam=ultricies&erat=eu&volutpat=nibh&in=quisque&congue=id&etiam=justo&justo=sit",
-                  "IsVerified": true
-                }, {
-                  "Id": "4",
-                  "Name": "Domini",
-                  "Role": "Mr",
-                  "Status": "Banned",
-                  "Company": "Eire",
-                  "AvatarUrl": "https://ted.com/vestibulum/ante/ipsum/primis/in/faucibus.aspx?adipiscing=non&molestie=quam&hendrerit=nec&at=dui&vulputate=luctus&vitae=rutrum&nisl=nulla&aenean=tellus&lectus=in&pellentesque=sagittis&eget=dui&nunc=vel&donec=nisl&quis=duis&orci=ac&eget=nibh&orci=fusce&vehicula=lacus&condimentum=purus&curabitur=aliquet&in=at&libero=feugiat&ut=non&massa=pretium&volutpat=quis&convallis=lectus&morbi=suspendisse&odio=potenti&odio=in&elementum=eleifend&eu=quam&interdum=a&eu=odio&tincidunt=in&in=hac&leo=habitasse&maecenas=platea&pulvinar=dictumst&lobortis=maecenas&est=ut&phasellus=massa&sit=quis&amet=augue&erat=luctus",
-                  "IsVerified": true
-                }, {
-                  "Id": "5",
-                  "Name": "Starlin",
-                  "Role": "Mr",
-                  "Status": "Active",
-                  "Company": "Abatz",
-                  "AvatarUrl": "http://people.com.cn/pharetra/magna/vestibulum/aliquet.jsp?quam=at&fringilla=turpis&rhoncus=donec&mauris=posuere&enim=metus&leo=vitae&rhoncus=ipsum&sed=aliquam&vestibulum=non&sit=mauris&amet=morbi&cursus=non&id=lectus&turpis=aliquam&integer=sit&aliquet=amet&massa=diam&id=in&lobortis=magna&convallis=bibendum&tortor=imperdiet&risus=nullam&dapibus=orci&augue=pede&vel=venenatis&accumsan=non&tellus=sodales&nisi=sed&eu=tincidunt&orci=eu&mauris=felis&lacinia=fusce&sapien=posuere&quis=felis&libero=sed&nullam=lacus&sit=morbi&amet=sem&turpis=mauris&elementum=laoreet&ligula=ut&vehicula=rhoncus&consequat=aliquet&morbi=pulvinar&a=sed&ipsum=nisl&integer=nunc&a=rhoncus&nibh=dui&in=vel&quis=sem&justo=sed&maecenas=sagittis&rhoncus=nam&aliquam=congue&lacus=risus&morbi=semper&quis=porta&tortor=volutpat&id=quam&nulla=pede&ultrices=lobortis&aliquet=ligula&maecenas=sit&leo=amet&odio=eleifend&condimentum=pede&id=libero&luctus=quis&nec=orci&molestie=nullam&sed=molestie&justo=nibh&pellentesque=in&viverra=lectus&pede=pellentesque&ac=at&diam=nulla&cras=suspendisse&pellentesque=potenti&volutpat=cras&dui=in&maecenas=purus&tristique=eu&est=magna&et=vulputate&tempus=luctus&semper=cum",
-                  "IsVerified": false
-                }, {
-                  "Id": "6",
-                  "Name": "Florinda",
-                  "Role": "Ms",
-                  "Status": "Inactive",
-                  "Company": "Jabberbean",
-                  "AvatarUrl": "https://yolasite.com/velit/vivamus/vel/nulla/eget/eros.html?interdum=faucibus&mauris=orci&non=luctus&ligula=et&pellentesque=ultrices&ultrices=posuere&phasellus=cubilia&id=curae&sapien=duis&in=faucibus&sapien=accumsan&iaculis=odio&congue=curabitur&vivamus=convallis&metus=duis&arcu=consequat&adipiscing=dui&molestie=nec&hendrerit=nisi&at=volutpat&vulputate=eleifend&vitae=donec&nisl=ut&aenean=dolor&lectus=morbi&pellentesque=vel&eget=lectus&nunc=in&donec=quam&quis=fringilla&orci=rhoncus&eget=mauris&orci=enim&vehicula=leo&condimentum=rhoncus&curabitur=sed&in=vestibulum&libero=sit&ut=amet&massa=cursus&volutpat=id&convallis=turpis&morbi=integer&odio=aliquet&odio=massa&elementum=id&eu=lobortis&interdum=convallis&eu=tortor&tincidunt=risus&in=dapibus&leo=augue&maecenas=vel&pulvinar=accumsan&lobortis=tellus&est=nisi",
-                  "IsVerified": true
-                }, {
-                  "Id": "7",
-                  "Name": "Jarred",
-                  "Role": "Rev",
-                  "Status": "Active",
-                  "Company": "Yadel",
-                  "AvatarUrl": "https://usatoday.com/accumsan.xml?etiam=praesent&justo=blandit&etiam=lacinia&pretium=erat&iaculis=vestibulum&justo=sed&in=magna&hac=at&habitasse=nunc&platea=commodo&dictumst=placerat&etiam=praesent&faucibus=blandit&cursus=nam&urna=nulla&ut=integer&tellus=pede&nulla=justo&ut=lacinia&erat=eget&id=tincidunt&mauris=eget&vulputate=tempus&elementum=vel&nullam=pede&varius=morbi&nulla=porttitor&facilisi=lorem&cras=id&non=ligula&velit=suspendisse&nec=ornare&nisi=consequat&vulputate=lectus&nonummy=in&maecenas=est&tincidunt=risus&lacus=auctor&at=sed&velit=tristique&vivamus=in&vel=tempus&nulla=sit&eget=amet&eros=sem&elementum=fusce&pellentesque=consequat&quisque=nulla&porta=nisl&volutpat=nunc&erat=nisl&quisque=duis&erat=bibendum&eros=felis&viverra=sed&eget=interdum&congue=venenatis&eget=turpis&semper=enim&rutrum=blandit&nulla=mi&nunc=in&purus=porttitor&phasellus=pede&in=justo&felis=eu&donec=massa&semper=donec&sapien=dapibus&a=duis&libero=at&nam=velit&dui=eu&proin=est&leo=congue&odio=elementum&porttitor=in&id=hac&consequat=habitasse&in=platea&consequat=dictumst&ut=morbi&nulla=vestibulum&sed=velit&accumsan=id&felis=pretium&ut=iaculis&at=diam&dolor=erat&quis=fermentum&odio=justo&consequat=nec&varius=condimentum&integer=neque&ac=sapien&leo=placerat&pellentesque=ante",
-                  "IsVerified": true
-                }, {
-                  "Id": "8",
-                  "Name": "Donnajean",
-                  "Role": "Mrs",
-                  "Status": "Banned",
-                  "Company": "Geba",
-                  "AvatarUrl": "http://qq.com/posuere/cubilia/curae/duis.png?nisi=vel&volutpat=nulla&eleifend=eget&donec=eros&ut=elementum&dolor=pellentesque&morbi=quisque&vel=porta&lectus=volutpat&in=erat&quam=quisque&fringilla=erat&rhoncus=eros&mauris=viverra&enim=eget&leo=congue&rhoncus=eget&sed=semper&vestibulum=rutrum&sit=nulla&amet=nunc&cursus=purus&id=phasellus&turpis=in&integer=felis&aliquet=donec&massa=semper&id=sapien&lobortis=a&convallis=libero&tortor=nam&risus=dui&dapibus=proin&augue=leo&vel=odio&accumsan=porttitor&tellus=id&nisi=consequat&eu=in&orci=consequat&mauris=ut&lacinia=nulla&sapien=sed&quis=accumsan&libero=felis&nullam=ut&sit=at&amet=dolor&turpis=quis&elementum=odio&ligula=consequat&vehicula=varius&consequat=integer&morbi=ac&a=leo&ipsum=pellentesque&integer=ultrices&a=mattis&nibh=odio&in=donec&quis=vitae&justo=nisi&maecenas=nam&rhoncus=ultrices&aliquam=libero&lacus=non&morbi=mattis&quis=pulvinar&tortor=nulla&id=pede&nulla=ullamcorper&ultrices=augue&aliquet=a&maecenas=suscipit&leo=nulla&odio=elit&condimentum=ac&id=nulla&luctus=sed",
-                  "IsVerified": true
-                }, {
-                  "Id": "9",
-                  "Name": "Christiana",
-                  "Role": "Ms",
-                  "Status": "Active",
-                  "Company": "Chatterbridge",
-                  "AvatarUrl": "http://omniture.com/aliquet/ultrices/erat/tortor/sollicitudin/mi/sit.jsp?ipsum=vitae&primis=consectetuer&in=eget&faucibus=rutrum&orci=at&luctus=lorem&et=integer&ultrices=tincidunt&posuere=ante&cubilia=vel&curae=ipsum&nulla=praesent&dapibus=blandit&dolor=lacinia&vel=erat&est=vestibulum&donec=sed&odio=magna&justo=at&sollicitudin=nunc&ut=commodo&suscipit=placerat&a=praesent&feugiat=blandit&et=nam&eros=nulla&vestibulum=integer&ac=pede&est=justo&lacinia=lacinia&nisi=eget&venenatis=tincidunt&tristique=eget&fusce=tempus&congue=vel&diam=pede&id=morbi&ornare=porttitor&imperdiet=lorem&sapien=id&urna=ligula&pretium=suspendisse&nisl=ornare&ut=consequat&volutpat=lectus&sapien=in&arcu=est&sed=risus&augue=auctor&aliquam=sed&erat=tristique&volutpat=in&in=tempus&congue=sit&etiam=amet&justo=sem&etiam=fusce&pretium=consequat&iaculis=nulla&justo=nisl&in=nunc&hac=nisl&habitasse=duis&platea=bibendum&dictumst=felis&etiam=sed&faucibus=interdum&cursus=venenatis&urna=turpis&ut=enim",
-                  "IsVerified": true
-                }, {
-                  "Id": "10",
-                  "Name": "Bartolomeo",
-                  "Role": "Rev",
-                  "Status": "Inactive",
-                  "Company": "Divanoodle",
-                  "AvatarUrl": "https://macromedia.com/cras/pellentesque/volutpat/dui/maecenas/tristique.jsp?lacinia=et&eget=magnis&tincidunt=dis&eget=parturient&tempus=montes&vel=nascetur&pede=ridiculus&morbi=mus&porttitor=etiam&lorem=vel&id=augue&ligula=vestibulum&suspendisse=rutrum&ornare=rutrum&consequat=neque&lectus=aenean&in=auctor&est=gravida&risus=sem&auctor=praesent&sed=id&tristique=massa&in=id&tempus=nisl&sit=venenatis&amet=lacinia&sem=aenean&fusce=sit&consequat=amet&nulla=justo&nisl=morbi&nunc=ut&nisl=odio&duis=cras&bibendum=mi&felis=pede&sed=malesuada&interdum=in&venenatis=imperdiet&turpis=et&enim=commodo&blandit=vulputate&mi=justo&in=in&porttitor=blandit&pede=ultrices&justo=enim&eu=lorem",
-                  "IsVerified": true
-                }]
-                """;
+            
             UserDto[] users = System.Text.Json.JsonSerializer.Deserialize<UserDto[]>(json);
             return Ok(users);
         }
@@ -98,12 +119,22 @@ namespace mega.Api.Controllers
 
     public class UserDto
     {
-        public string Id { get; set; } = string.Empty;
+        [JsonPropertyName("username")]
+        public string Username { get; set; } = string.Empty;
+
+        [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
-        public string Role { get; set; } = string.Empty;
+
+        [JsonPropertyName("email")]
+        public string Email { get; set; } = string.Empty;
+
+        [JsonPropertyName("phone_number")]
+        public string PhoneNumber { get; set; } = string.Empty;
+
+        [JsonPropertyName("status")]
         public string Status { get; set; } = string.Empty;
-        public string Company { get; set; } = string.Empty;
-        public string AvatarUrl { get; set; } = string.Empty;
-        public bool IsVerified { get; set; }
+
+        [JsonPropertyName("role")]
+        public string Role { get; set; } = string.Empty;
     }
 }
