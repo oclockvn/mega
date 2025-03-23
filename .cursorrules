@@ -1,0 +1,44 @@
+# mega - an application for research and showcase technologies
+
+## technologies
+
+- .NET9 api for backend
+- EntityFrameworkCore 9 for ORM, SqlServer 2022 for database
+- Reactjs 19 for client app, Tanstack router for routing, react context for state management, react-query for api query, axios for http client
+
+## application structure
+
+.
+├── docs/                           # documentations
+└── src/                            # source code
+    ├── MegaUI/                     # react application root
+    │   ├── public/                 # public assets
+    │   └── src/                    # 
+    │       ├── assets/             #
+    │       ├── lib/                # libraries, helpers, utilities
+    │       └── routes/             # tanstack router routes
+    │           ├── _app/           # for authenticated routes
+    │           └── _auth/          # for unauthenticated routes
+    └── mega.Api/                   # .net 9 api
+        ├── Application/            # contains application layer code
+        │   ├── Enums/              # define enums in application
+        │   ├── Exceptions/         # define exceptions in application
+        │   └── Resolvers/          # define resolvers in application
+        ├── Controllers/            # API controllers
+        ├── Dockerfile/             #
+        ├── HttpResolvers/          # resolvers implementation by HttpContext
+        ├── Infrastructure/         # infrastructure code, service implementations
+        │   └── Db/                 # EF entities and database
+        │       ├── Configurations/ # configuration for entities
+        │       └── Entities/       # entities
+        ├── Middleware/             # .NET middlewares
+        ├── Migrations/             # EF migration code
+
+## .NET rules
+
+## React rules
+
+## General rules
+
+- Suggest to update .cursorrules to help coding generation faster and following the current convention.
+- Do no remove existing comments.
