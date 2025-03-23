@@ -14,3 +14,7 @@ Start the server:
 ```
 pnpm --prefix src\megaapp\ run dev
 ```
+
+## Release
+
+Run the command `.\release.ps1`, it'll build .net and react app to `.\publish` folder.
