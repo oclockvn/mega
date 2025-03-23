@@ -1,0 +1,1 @@
+pnpm --prefix src\megaapp\ run dev
