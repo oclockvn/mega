@@ -62,8 +62,7 @@ export const columns: ColumnDef<User>[] = [
       <DataTableColumnHeader column={column} title='Name' />
     ),
     cell: ({ row }) => {
-      const { firstName, lastName } = row.original
-      const fullName = `${firstName} ${lastName}`
+      const {name: fullName } = row.original
       return <LongText className='max-w-36'>{fullName}</LongText>
     },
     meta: { className: 'w-36' },
@@ -114,7 +113,7 @@ export const columns: ColumnDef<User>[] = [
     ),
     cell: ({ row }) => {
       const { role } = row.original
-      const userType = userTypes.find(({ value }) => value === role)
+      const userType = userTypes.find(({ value }) => value === role) || userTypes[0]
 
       if (!userType) {
         return null
