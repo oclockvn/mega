@@ -9,6 +9,7 @@ public static class Program
     public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.AddServiceDefaults();
 
         // Add services to the container.
         builder.Services.AddMegaApi();
@@ -18,6 +19,8 @@ public static class Program
         builder.Services.AddOpenApi();
 
         var app = builder.Build();
+
+        app.MapDefaultEndpoints();
 
         app.UseDefaultFiles();
         app.MapStaticAssets();

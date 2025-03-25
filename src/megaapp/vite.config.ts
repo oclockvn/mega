@@ -14,6 +14,7 @@ export default defineConfig({
         secure: false,
       },
     },
+    port: 4200,
   },
   resolve: {
     alias: {

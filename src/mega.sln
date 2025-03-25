@@ -4,6 +4,10 @@ VisualStudioVersion = 17.13.35731.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mega.Api", "mega.Api\mega.Api.csproj", "{8A8EDAB6-9C78-48D3-9D0A-518456817509}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mega.AppHost", "mega.AppHost\mega.AppHost.csproj", "{53D53743-4B73-45DA-89FB-05486D9E0CA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mega.ServiceDefaults", "mega.ServiceDefaults\mega.ServiceDefaults.csproj", "{F774F6C0-EE99-946C-143E-CBC4B2D28D46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +18,14 @@ Global
 		{8A8EDAB6-9C78-48D3-9D0A-518456817509}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A8EDAB6-9C78-48D3-9D0A-518456817509}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A8EDAB6-9C78-48D3-9D0A-518456817509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D53743-4B73-45DA-89FB-05486D9E0CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D53743-4B73-45DA-89FB-05486D9E0CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D53743-4B73-45DA-89FB-05486D9E0CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D53743-4B73-45DA-89FB-05486D9E0CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F774F6C0-EE99-946C-143E-CBC4B2D28D46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F774F6C0-EE99-946C-143E-CBC4B2D28D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F774F6C0-EE99-946C-143E-CBC4B2D28D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F774F6C0-EE99-946C-143E-CBC4B2D28D46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
