@@ -1,1 +1,1 @@
-pnpm --prefix src\megaapp\ run dev
+pnpm --prefix src\mega.ClientApp\ run dev
