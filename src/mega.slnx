@@ -1,7 +1,3 @@
 <Solution>
   <Project Path="mega.Api/mega.Api.csproj" />
-  <Project Path="MegaUI/megaui.esproj">
-    <Build />
-    <Deploy />
-  </Project>
 </Solution>
