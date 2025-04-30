@@ -1,3 +1,9 @@
 <Solution>
   <Project Path="mega.Api/mega.Api.csproj" />
+  <Project Path="mega.AppHost/mega.AppHost.csproj" />
+  <!-- <Project Path="mega.ClientApp/mega.ClientApp.esproj">
+    <Build />
+    <Deploy />
+  </Project> -->
+  <Project Path="mega.ServiceDefaults/mega.ServiceDefaults.csproj" />
 </Solution>
