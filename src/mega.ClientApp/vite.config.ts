@@ -6,13 +6,17 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
+  console.log({ VITE_PORT: env.VITE_PORT, PORT: env.PORT })
   
+  // services__api__https__0 is the env variable injected by the host
+  // VITE_API_URL is the env variable injected by the host
+  // VITE_PORT is the env variable injected by the host
   return {
     plugins: [react(), TanStackRouterVite()],
     server: {
       proxy: {
         '/api': {
-          target: env.services__mega_api__https__0 || env.VITE_API_URL || 'https://localhost:9200',
+          target: env.services__api__https__0 || env.VITE_API_URL,
           changeOrigin: true,
           secure: false,
           ws: true,
