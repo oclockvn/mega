@@ -9,14 +9,20 @@ if (isDevelopment)
     builder.Configuration.AddUserSecrets<Program>();
 }
 
+var keycloak = builder.AddKeycloak("keycloak", 8080);
+
 var apiService = builder.AddProject<Projects.mega_Api>("api")
     // by default apiService exposes 2 endpoints: http and https
     // 2 environment variables below will be injected to clientApp (its dependent)
     // services__api__http__0, services__api__https__0
     //.WithHttpEndpoint(name: "endpoint") // will result as new env variable services__api__endpoint__0, however we don't need to configure it
-    .WithExternalHttpEndpoints();
+    .WithExternalHttpEndpoints()
+    .WithReference(keycloak)
+    .WaitFor(keycloak)
+    ;
 
 builder.AddPnpmApp("frontend", "../mega.ClientApp", "dev")
+   .WithReference(keycloak)
    .WithReference(apiService)
    .WithEnvironment("BROWSER", "none")
 #if DEBUG
