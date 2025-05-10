@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.2518757">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <!--<IsService>true</IsService>
+    <ServiceName>mega-client</ServiceName>
+    <ServiceType>web</ServiceType>
+    <ServicePort>4200</ServicePort>
+    <ServiceScheme>https</ServiceScheme>-->
+    <PackageManager>pnpm</PackageManager>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0-preview.1.24081.5" />
+  </ItemGroup>
+</Project>

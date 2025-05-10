@@ -155,6 +155,8 @@ class ApiClient {
 // api.js - Configure and export the API client
 // import ApiClient from './apiClient';
 
+// In development, Vite proxies /api requests to the .NET backend
+// In production, the app is served from the wwwroot folder by .NET, so /api works directly
 const API_BASE_URL = '/api';
 
 // Create and export a configured instance

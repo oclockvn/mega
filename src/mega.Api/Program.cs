@@ -1,4 +1,3 @@
-
 using mega.Api.Infrastructure;
 using mega.Api.Middleware;
 
@@ -9,6 +8,7 @@ public static class Program
     public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.AddServiceDefaults();
 
         // Add services to the container.
         builder.Services.AddMegaApi();
@@ -19,7 +19,10 @@ public static class Program
 
         var app = builder.Build();
 
+        app.MapDefaultEndpoints();
+
         app.UseDefaultFiles();
+        app.UseStaticFiles();
         app.MapStaticAssets();
 
         // Configure the HTTP request pipeline.
@@ -31,7 +34,10 @@ public static class Program
         // map global exception handler in the first place of the pipeline
         app.UseGlobalExceptionHandler();
 
-        app.UseHttpsRedirection();
+        if (builder.Configuration.GetValue<int?>("ASPNET_HTTPS_PORT") != null)
+        {
+            app.UseHttpsRedirection();
+        }
         app.UseAuthorization();
 
         app.MapControllers();

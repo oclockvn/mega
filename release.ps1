@@ -1,11 +1,11 @@
 # .NET api path src\mega.Api\mega.Api.csproj
-# react app path src\megaapp\package.json
+# react app path src\mega.ClientApp\package.json
 
 # Configuration
 $Configuration = "Release"
 $OutputPath = "publish"
 $ApiProjectPath = "src\mega.Api\mega.Api.csproj"
-$ReactAppPath = "src\megaapp"
+$ReactAppPath = "src\mega.ClientApp\"
 
 # Clean previous builds
 Write-Host "Cleaning previous builds..." -ForegroundColor Yellow
