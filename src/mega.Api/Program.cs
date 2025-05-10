@@ -1,4 +1,3 @@
-
 using mega.Api.Infrastructure;
 using mega.Api.Middleware;
 
@@ -34,7 +33,10 @@ public static class Program
         // map global exception handler in the first place of the pipeline
         app.UseGlobalExceptionHandler();
 
-        app.UseHttpsRedirection();
+        if (builder.Configuration.GetValue<int?>("ASPNET_HTTPS_PORT") != null)
+        {
+            app.UseHttpsRedirection();
+        }
         app.UseAuthorization();
 
         app.MapControllers();
