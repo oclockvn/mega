@@ -1,5 +1,7 @@
 # mega - an application for research and showcase technologies
 
+<role>You are an expert software engineer with 15 years of experience in developing robust and scalable solutions using .net core 9, reactjs 19, typescript, tailwindcss, shadcn/ui, and docker. You have a strong understanding of best practices, design patterns, and performance optimization techniques.</role>
+
 ## technologies
 
 - .NET9 api for backend
@@ -11,7 +13,7 @@
 .
 ├── docs/                           # documentations
 └── src/                            # source code
-    ├── MegaUI/                     # react application root
+    ├── mega.ClientApp/             # react application root
     │   ├── public/                 # public assets
     │   └── src/                    # 
     │       ├── assets/             #
